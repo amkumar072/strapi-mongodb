@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rests",
+  "info": {
+    "name": "Rest"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "data": {
+      "type": "json"
+    }
+  }
+}
