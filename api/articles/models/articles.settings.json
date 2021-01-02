@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "dinners",
+  "collectionName": "articles",
   "info": {
-    "name": "dinner",
+    "name": "Articles",
     "description": ""
   },
   "options": {
@@ -11,8 +11,16 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "name": {
+    "title": {
       "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "category": {
+      "collection": "categories",
+      "via": "articles",
+      "dominant": true
     },
     "image": {
       "collection": "file",

@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/rests": {
+    "/categories": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the categories's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve categories document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Rest"
+                    "$ref": "#/components/schemas/Categories"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Rest"
+          "Categories"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new categories record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve categories document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Rest"
+                  "$ref": "#/components/schemas/Categories"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Rest"
+          "Categories"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewRest"
+                "$ref": "#/components/schemas/NewCategories"
               }
             }
           }
         }
       }
     },
-    "/rests/count": {
+    "/categories/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of categories documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve categories document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Rest"
+          "Categories"
         ],
         "parameters": []
       }
     },
-    "/rests/{id}": {
+    "/categories/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one categories record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve categories document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Rest"
+                  "$ref": "#/components/schemas/Categories"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Rest"
+          "Categories"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single categories record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve categories document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Rest"
+                  "$ref": "#/components/schemas/Categories"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Rest"
+          "Categories"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewRest"
+                "$ref": "#/components/schemas/NewCategories"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single categories record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single categories based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Rest"
+          "Categories"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Rest": {
+      "Categories": {
         "required": [
           "id"
         ],
@@ -525,8 +525,45 @@
           "name": {
             "type": "string"
           },
-          "data": {
-            "type": "object"
+          "articles": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "image": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -534,13 +571,16 @@
           }
         }
       },
-      "NewRest": {
+      "NewCategories": {
         "properties": {
           "name": {
             "type": "string"
           },
-          "data": {
-            "type": "object"
+          "articles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -558,7 +598,7 @@
   },
   "tags": [
     {
-      "name": "Rest"
+      "name": "Categories"
     }
   ]
 }

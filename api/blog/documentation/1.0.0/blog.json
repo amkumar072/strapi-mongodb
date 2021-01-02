@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/dinners": {
+    "/blogs": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Dinner"
+                    "$ref": "#/components/schemas/Blog"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Dinner"
+          "Blog"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Dinner"
+                  "$ref": "#/components/schemas/Blog"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Dinner"
+          "Blog"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewDinner"
+                "$ref": "#/components/schemas/NewBlog"
               }
             }
           }
         }
       }
     },
-    "/dinners/count": {
+    "/blogs/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Dinner"
+          "Blog"
         ],
         "parameters": []
       }
     },
-    "/dinners/{id}": {
+    "/blogs/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Dinner"
+                  "$ref": "#/components/schemas/Blog"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Dinner"
+          "Blog"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Dinner"
+                  "$ref": "#/components/schemas/Blog"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Dinner"
+          "Blog"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewDinner"
+                "$ref": "#/components/schemas/NewBlog"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Dinner"
+          "Blog"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Dinner": {
+      "Blog": {
         "required": [
           "id"
         ],
@@ -525,75 +525,11 @@
           "name": {
             "type": "string"
           },
-          "image": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "alternativeText": {
-                  "type": "string"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
-                  "type": "string"
-                },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "previewUrl": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "provider_metadata": {
-                  "type": "object"
-                },
-                "related": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "author": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -601,9 +537,15 @@
           }
         }
       },
-      "NewDinner": {
+      "NewBlog": {
         "properties": {
           "name": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "content": {
             "type": "string"
           },
           "published_at": {
@@ -622,7 +564,7 @@
   },
   "tags": [
     {
-      "name": "Dinner"
+      "name": "Blog"
     }
   ]
 }

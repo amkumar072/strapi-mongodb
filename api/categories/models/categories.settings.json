@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "rests",
+  "collectionName": "categories",
   "info": {
-    "name": "Rest"
+    "name": "Categories"
   },
   "options": {
     "increments": true,
@@ -13,8 +13,9 @@
     "name": {
       "type": "string"
     },
-    "data": {
-      "type": "json"
+    "articles": {
+      "via": "category",
+      "collection": "articles"
     }
   }
 }

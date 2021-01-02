@@ -1250,6 +1250,14 @@
                 "type": "string"
               }
             }
+          },
+          "Application": {
+            "type": "string",
+            "enum": [
+              "SMB",
+              "OT",
+              "WEZ"
+            ]
           }
         }
       },
@@ -1291,6 +1299,14 @@
           },
           "role": {
             "type": "string"
+          },
+          "Application": {
+            "type": "string",
+            "enum": [
+              "SMB",
+              "OT",
+              "WEZ"
+            ]
           },
           "created_by": {
             "type": "string"
